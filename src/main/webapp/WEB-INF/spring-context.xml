@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.example" />
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <bean id="knowledgePackDTOToModelConverter" class="com.example.converter.KnowledgePackDTOToModelConverter"/>
+    <bean id="knowledgePackEntityToModelConverter" class="com.example.converter.KnowledgePackEntityToModelConverter"/>
+    <bean id="knowledgePackModelToDTOConverter" class="com.example.converter.KnowledgePackModelToDTOConverter"/>
+    <bean id="knowledgePackModelToEntityConverter" class="com.example.converter.KnowledgePackModelToEntityConverter"/>
+    <bean id="knowledgePackSetDTOToModelConverter" class="com.example.converter.KnowledgePackSetDTOToModelConverter"/>
+    <bean id="knowledgePackSetModelToEntityConverter" class="com.example.converter.KnowledgePackSetModelToEntityConverter"/>
+    <bean id="knowledgePackSetEntityToModelConverter" class="com.example.converter.KnowledgePackSetEntityToModelConverter"/>
+    <bean id="knowledgePackSetModelToDTOConverter" class="com.example.converter.KnowledgePackSetModelToDTOConverter"/>
+
+    <bean id="conversionService"
+          class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="knowledgePackDTOToModelConverter"/>
+                <ref bean="knowledgePackEntityToModelConverter"/>
+                <ref bean="knowledgePackModelToDTOConverter"/>
+                <ref bean="knowledgePackModelToEntityConverter"/>
+                <ref bean="knowledgePackSetDTOToModelConverter"/>
+                <ref bean="knowledgePackSetModelToEntityConverter"/>
+                <ref bean="knowledgePackSetEntityToModelConverter"/>
+                <ref bean="knowledgePackSetModelToDTOConverter"/>
+            </set>
+        </property>
+    </bean>
+
+</beans>

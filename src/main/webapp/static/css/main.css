@@ -1,0 +1,22 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#kpacAttachedGrid {
+    height: 500px;
+}
+
+#kpacGrid {
+    height: 500px;
+}
+
+#kpacSetGrid {
+    height: 500px;
+}
+
+.validation-error-container {
+    color: red;
+}
