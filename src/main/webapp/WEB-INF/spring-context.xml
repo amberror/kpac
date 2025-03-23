@@ -13,14 +13,29 @@
 
     <context:property-placeholder location="classpath:application.properties"/>
 
-    <bean id="knowledgePackDTOToModelConverter" class="com.example.converter.KnowledgePackDTOToModelConverter"/>
-    <bean id="knowledgePackEntityToModelConverter" class="com.example.converter.KnowledgePackEntityToModelConverter"/>
-    <bean id="knowledgePackModelToDTOConverter" class="com.example.converter.KnowledgePackModelToDTOConverter"/>
-    <bean id="knowledgePackModelToEntityConverter" class="com.example.converter.KnowledgePackModelToEntityConverter"/>
-    <bean id="knowledgePackSetDTOToModelConverter" class="com.example.converter.KnowledgePackSetDTOToModelConverter"/>
-    <bean id="knowledgePackSetModelToEntityConverter" class="com.example.converter.KnowledgePackSetModelToEntityConverter"/>
-    <bean id="knowledgePackSetEntityToModelConverter" class="com.example.converter.KnowledgePackSetEntityToModelConverter"/>
-    <bean id="knowledgePackSetModelToDTOConverter" class="com.example.converter.KnowledgePackSetModelToDTOConverter"/>
+    <alias name="defaultKnowledgePackDTOToModelConverter" alias="knowledgePackDTOToModelConverter"/>
+    <bean id="defaultKnowledgePackDTOToModelConverter" class="com.example.converter.KnowledgePackDTOToModelConverter"/>
+
+    <alias name="defaultKnowledgePackEntityToModelConverter" alias="knowledgePackEntityToModelConverter"/>
+    <bean id="defaultKnowledgePackEntityToModelConverter" class="com.example.converter.KnowledgePackEntityToModelConverter"/>
+
+    <alias name="defaultKnowledgePackModelToDTOConverter" alias="knowledgePackModelToDTOConverter"/>
+    <bean id="defaultKnowledgePackModelToDTOConverter" class="com.example.converter.KnowledgePackModelToDTOConverter"/>
+
+    <alias name="defaultKnowledgePackModelToEntityConverter" alias="knowledgePackModelToEntityConverter"/>
+    <bean id="defaultKnowledgePackModelToEntityConverter" class="com.example.converter.KnowledgePackModelToEntityConverter"/>
+
+    <alias name="defaultKnowledgePackSetDTOToModelConverter" alias="knowledgePackSetDTOToModelConverter"/>
+    <bean id="defaultKnowledgePackSetDTOToModelConverter" class="com.example.converter.KnowledgePackSetDTOToModelConverter"/>
+
+    <alias name="defaultKnowledgePackSetModelToEntityConverter" alias="knowledgePackSetModelToEntityConverter"/>
+    <bean id="defaultKnowledgePackSetModelToEntityConverter" class="com.example.converter.KnowledgePackSetModelToEntityConverter"/>
+
+    <alias name="defaultKnowledgePackSetEntityToModelConverter" alias="knowledgePackSetEntityToModelConverter"/>
+    <bean id="defaultKnowledgePackSetEntityToModelConverter" class="com.example.converter.KnowledgePackSetEntityToModelConverter"/>
+
+    <alias name="defaultKnowledgePackSetModelToDTOConverter" alias="knowledgePackSetModelToDTOConverter"/>
+    <bean id="defaultKnowledgePackSetModelToDTOConverter" class="com.example.converter.KnowledgePackSetModelToDTOConverter"/>
 
     <bean id="conversionService"
           class="org.springframework.context.support.ConversionServiceFactoryBean">
